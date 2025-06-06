@@ -8,7 +8,7 @@ const fs = require("fs");
 const cors = require("cors");
 
 const app = express();
-const upload = multer({ dest: "uploads/" });
+const upload = multer({ dest: "/tmp" });
 app.use(cors());
 app.use(bodyParser.json());
 
