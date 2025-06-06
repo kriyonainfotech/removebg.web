@@ -12,6 +12,10 @@ const upload = multer({ dest: "/tmp" });
 app.use(cors());
 app.use(bodyParser.json());
 
+app.use(cors({
+    origin: "https://removebg-ten-sooty.vercel.app"
+}));
+
 app.get("/", (req, res) => {
     res.send("Hello, World!");
 });
