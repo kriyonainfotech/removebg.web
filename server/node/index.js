@@ -35,7 +35,7 @@ app.post("/api/remove-background", upload.single("image"), async (req, res) => {
         form.append("image", fs.createReadStream(imagePath)); // 💥 this field name MUST be 'image'
 
         const pythonRes = await axios.post(
-            "http://localhost:5001/remove-bg",
+            "https://removebg-bpython.onrender.com/remove-bg",
             form,
             {
                 headers: form.getHeaders(),
