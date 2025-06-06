@@ -110,10 +110,14 @@ from PIL import Image, ImageEnhance, ImageFilter
 import io
 import os
 
+port = int(os.environ.get("PORT", 5000))  # use env PORT or default 5000
+
+
 # Set better model
 os.environ["U2NET_MODEL_NAME"] = "isnet-general-use"
 
 app = Flask(__name__)
+app.run(host="0.0.0.0", port=port)
 
 @app.route('/remove-bg', methods=['POST'])
 def remove_bg():
