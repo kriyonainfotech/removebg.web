@@ -43,9 +43,11 @@ app.post("/api/remove-background", upload.single("image"), async (req, res) => {
             form,
             {
                 headers: form.getHeaders(),
-                responseType: "arraybuffer", // for binary image data
+                responseType: "arraybuffer",
+                timeout: 240000 // 240 seconds (3 minutes)
             }
         );
+
 
         console.log("✅ Background removed successfully.", pythonRes.data);
         // console.log("Python Response", pythonRes);
