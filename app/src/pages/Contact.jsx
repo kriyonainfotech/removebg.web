@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 import { FaCopy } from "react-icons/fa";
 import { FaRegCopy } from "react-icons/fa";
 import axios from 'axios';
-const apiurl = 'http://localhost:5000'
+const apiurl = 'https://removebg-bnode.vercel.app'
 
 export default function Contact() {
     const [formData, setFormData] = useState({

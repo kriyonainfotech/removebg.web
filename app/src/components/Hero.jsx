@@ -416,7 +416,7 @@ export default function Hero() {
             formData.append('image', file);
 
             const response = await axios.post(
-                'http://localhost:5000/api/remove-background',
+                'https://removebg-bnode.vercel.app/api/remove-background',
                 formData,
                 {
                     headers: { 'Content-Type': 'multipart/form-data' },
