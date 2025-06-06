@@ -109,6 +109,8 @@ from rembg import remove
 from PIL import Image, ImageEnhance, ImageFilter
 import io
 import os
+from flask_cors import CORS
+
 
 port = int(os.environ.get("PORT", 5000))  # use env PORT or default 5000
 
@@ -117,6 +119,8 @@ port = int(os.environ.get("PORT", 5000))  # use env PORT or default 5000
 os.environ["U2NET_MODEL_NAME"] = "isnet-general-use"
 
 app = Flask(__name__)
+app = Flask(__name__)
+CORS(app, origins=["https://removebg-ten-sooty.vercel.app"])
 
 @app.route('/remove-bg', methods=['POST'])
 def remove_bg():
