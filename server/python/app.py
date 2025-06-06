@@ -117,7 +117,6 @@ port = int(os.environ.get("PORT", 5000))  # use env PORT or default 5000
 os.environ["U2NET_MODEL_NAME"] = "isnet-general-use"
 
 app = Flask(__name__)
-app.run(host="0.0.0.0", port=port)
 
 @app.route('/remove-bg', methods=['POST'])
 def remove_bg():
@@ -153,6 +152,8 @@ def remove_bg():
         print(f"⚠️ Error: {str(e)}")
         return {'error': 'Internal server error'}, 500
 if __name__ == '__main__':
-    app.run(port=5001, debug=True)
+    # app.run(port=5001, debug=True)
+    app.run(host="0.0.0.0", port=port)
+
 
 # .\venv\Scripts\activate  - activate virtul enviroment
