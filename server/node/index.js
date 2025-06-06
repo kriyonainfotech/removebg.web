@@ -12,6 +12,9 @@ const upload = multer({ dest: "uploads/" });
 app.use(cors());
 app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+    res.send("Hello, World!");
+});
 
 // Handle background removal request
 app.post("/api/remove-background", upload.single("image"), async (req, res) => {
