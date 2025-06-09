@@ -104,7 +104,7 @@ export default function Hero() {
             formData.append('image', file);
 
             const response = await axios.post(
-                'http://13.234.46.69:2001/api/remove-background',
+                'http://13.234.46.69:2000/api/remove-background',
                 formData,
                 {
                     headers: { 'Content-Type': 'multipart/form-data' },
